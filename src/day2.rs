@@ -2,7 +2,14 @@ use aoc_runner_derive::{aoc, aoc_generator};
 
 #[aoc_generator(day2, part1)]
 fn parse_input_part1(input: &str) -> Vec<Vec<usize>> {
-    input.lines().map(|line| line.split_whitespace().map(|num| num.parse().unwrap()).collect()).collect()
+    input
+        .lines()
+        .map(|line| {
+            line.split_whitespace()
+                .map(|num| num.parse().unwrap())
+                .collect()
+        })
+        .collect()
 }
 
 #[aoc_generator(day2, part2)]
@@ -30,8 +37,7 @@ fn part2(input: &[Vec<usize>]) -> usize {
     for report in input {
         if is_safe(report) {
             safe_levels_count += 1;
-        }
-        else {
+        } else {
             // Activate the Problem Dampener. Remove one of the levels from the report, starting
             // with the first one, and check if the report is safe.
             for i in 0..report.len() {

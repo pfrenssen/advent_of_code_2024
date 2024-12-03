@@ -56,10 +56,7 @@ mod tests {
 
     #[test]
     fn test_parse_input_part1() {
-        let expected = (
-            vec![3, 4, 2, 1, 3, 3],
-            vec![4, 3, 5, 3, 9, 3],
-        );
+        let expected = (vec![3, 4, 2, 1, 3, 3], vec![4, 3, 5, 3, 9, 3]);
 
         assert_eq!(expected, parse_input_part1(get_test_input_part1()));
     }
